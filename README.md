@@ -9,7 +9,9 @@ Threads are created to check the following criteria:
 * One thread - check if each column contains the digits 1 through 9
 * One thread - check if each row contains the digits 1 through 9
 * One thread - check if each of the 3×3 subgrids contains the digits 1 through 9
+
 **Passing Parameters to Each Thread**
+
 The parent thread creates the worker threads, passing each worker the location that it must check in the grid. This step requires passing several parameters to each thread, which is done using a struct.
 > For example, a structure to pass the row and column where a thread must begin validating:
 > typedef struct {
@@ -18,6 +20,7 @@ The parent thread creates the worker threads, passing each worker the location t
 > };
 
 **Returning Results to the Parent Thread**
+
 Each worker thread determines the validity of a particular region of the Sudoku puzzle. Once a worker has performed this check, it passes its results back to the parent. The ith index in this array corresponds to the ith worker thread. If a worker sets its corresponding value to 1, it is indicating that its region of the Sudoku puzzle is valid. A value of 0 would indicate otherwise.
 When all worker threads have completed, the parent thread checks each entry in the result array to determine if the Sudoku puzzle is valid.
 * When a thread returns values to the main thread and it is writing on the array, no other thread can read array value.
