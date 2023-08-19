@@ -24,8 +24,8 @@ The parent thread creates the worker threads, passing each worker the location t
 Each worker thread determines the validity of a particular region of the Sudoku puzzle. Once a worker has performed this check, it passes its results back to the parent. The ith index in this array corresponds to the ith worker thread. If a worker sets its corresponding value to 1, it is indicating that its region of the Sudoku puzzle is valid. A value of 0 would indicate otherwise.
 When all worker threads have completed, the parent thread checks each entry in the result array to determine if the Sudoku puzzle is valid.
 * When a thread returns values to the main thread and it is writing on the array, no other thread can read array value.
-• This requires synchronization and mutex lock.
-• Invalid entries and their indexes are stored.
+* This requires synchronization and mutex lock.
+* Invalid entries and their indexes are stored.
 
 ### Part 2 of 2: Sudoku Puzzle Solution
 A Sudoku matrix with at least 2 invalid entries and its solution are initialized. Each thread is assigned to each row and column and corresponding values are changed if found erroneous (Same as followed in part 1). 
