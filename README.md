@@ -28,6 +28,6 @@ When all worker threads have completed, the parent thread checks each entry in t
 * Invalid entries and their indexes are stored.
 
 ### Part 2 of 2: Sudoku Puzzle Solution
-A Sudoku matrix with at least 2 invalid entries and its solution are initialized. Each thread is assigned to each row and column and corresponding values are changed if found erroneous (Same as followed in part 1). 
+A Sudoku matrix with at least 2 invalid entries and its solution are initialized. Each thread is assigned to each row and column and corresponding values are changed if found erroneous (same as followed in part 1). 
 Limited threads are run using semaphores to balance overhead and security issues.
 After resolving invalid entries, the solution is validated and the result is displayed.
