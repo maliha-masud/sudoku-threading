@@ -14,10 +14,10 @@ Threads are created to check the following criteria:
 
 The parent thread creates the worker threads, passing each worker the location that it must check in the grid. This step requires passing several parameters to each thread, which is done using a struct.
 > For example, a structure to pass the row and column where a thread must begin validating:
-> typedef struct {
-> int row;
-> int column;
-> };
+>> typedef struct {
+>> int row;
+>> int column;
+>> };
 
 **Returning Results to the Parent Thread**
 
